@@ -46,6 +46,10 @@ function setup() {
   atrs[0] = new Attractor(0.5 * windowWidth, windowHeight + 30, 0.01);
   for (let i = 0; i < 25; i++) {
     particles[i] = new Particle(random(100, 300), random(100, 300), random(0.3, 2), 60, int(random(1, 3)))
+    if(i%5==0){
+      let dump = new Attractor(random(windowWidth), random(windowHeight), random(50,300));
+      atrs.push(dump);
+    }
   }
   textSize(15)
   textFont("Helvetica")
