@@ -43,13 +43,18 @@ function setup() {
   osc.amp(0);
   osc.start();
   createCanvas(windowWidth, windowHeight)
-  atrs[0] = new Attractor(0.5 * windowWidth, windowHeight + 30, 0.01);
+    Array(5)
+    .fill("")
+    .map((a, i) => {
+      atrs[i] = new Attractor(
+        random(0, width),
+        random(0, height),
+        random(30, 200),
+        random(50, 200)
+      );
+    });
   for (let i = 0; i < 25; i++) {
     particles[i] = new Particle(random(100, 300), random(100, 300), random(0.3, 2), 60, int(random(1, 3)))
-    if(i%5==0){
-      let dump = new Attractor(random(windowWidth), random(windowHeight), random(50,300));
-      atrs.push(dump);
-    }
   }
   textSize(15)
   textFont("Helvetica")
