@@ -61,8 +61,7 @@ function setup() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight)
   background(50, 50, 200)
-  link1.position(0.92 * windowWidth - 60, 0.9 * windowHeight + 17);
-  link.position(0.92 * windowWidth - 60, 0.9 * windowHeight);
+
 }
 
 function Sin(n) {
